@@ -3,61 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <title>corinne's photos</title>
-  <style>
-    body {
-      margin: auto;
-      background: #0f0f0f;
-      font-family: "Times New Roman", serif;
-    }
+<style>
+  body {
+    margin: auto;
+    background: #0f0f0f;
+    font-family: "Times New Roman", serif;
+  }
 
-    .gallery {
-      height: 100vh;
-      overflow-y: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      gap: 12px;
-      padding: 12px;
-    }
-    
-    .item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    
+  .gallery {
+    height: 100vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .item {
+    position: relative;
+    overflow: visible;          /* allow image to expand */
+    border-radius: 8px;
+    z-index: 1;
+  }
+
+  .item:hover {
+    z-index: 10;                /* bring hovered image to front */
+  }
+
+  .item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;          /* cropped in grid */
+    border-radius: 8px;
+    background: #000;
+    transition:
+      transform 0.3s ease,
+      object-fit 0.3s ease;
+  }
+
+  .item:hover img {
+    object-fit: contain;        /* show full aspect ratio */
+    transform: scale(1.25);
+  }
+
+  .caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+
+  .item:hover .caption {
+    opacity: 1;
+  }
+
+  /* Mobile / touch: always show full image */
+  @media (hover: none) {
     .item img {
-      width: 100%;
-      height: auto;
       object-fit: contain;
-    }
-
-    .item:hover img {
-      transform: scale(1.05);
+      transform: none;
     }
 
     .caption {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      padding: 12px;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white;
-      font-size: 0.9rem;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-
-    .item:hover .caption {
       opacity: 1;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <h1 style="color:White; margin:auto;"> here are some photos</h1>
-    <p style="color:White; margin:auto;"> mostly taken on a canon r100 with a 18-50mm kit lens or a plastic lens (womp womp).<br/>
-    <a href="index.html">go back</a>
+  <h1 style="color:White;">    here are some photos</h1>
+    <p style="color:White;">   mostly taken on a canon r100 with a 18-50mm kit lens or a plastic lens (womp womp).<br/>
+    <a href="index.html">      go back</a>
     </p>
   <div class="gallery">
     <div class="item">
