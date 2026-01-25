@@ -2,38 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Horizontal Gallery</title>
+  <title>Fast Scroll Gallery</title>
   <style>
     body {
       margin: 0;
-      background: #111;
+      background: #0f0f0f;
+      font-family: "Times New Roman", serif;
     }
 
     .gallery {
       height: 100vh;
-      display: flex;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 12px;
-      overflow-x: auto;
       padding: 12px;
     }
 
-    .gallery img {
-      height: 100%;
+    .item {
+      position: relative;
+      overflow: hidden;
       border-radius: 8px;
+    }
+
+    .item img {
+      width: 100%;
+      height: 100%;
+      display: block;
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover img {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .item:hover .caption {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <h1> here are photos. </h1>
-  <p> mostly taken on a cannon r100 with either a 18-50mm stock lens or plastic lens (bc disfunctional equipment forces creativity).</p>
+
   <div class="gallery">
-    <img src="IMG_8600.JPG" style="max-height: 500px; max-width: 500px;"/>
-    <img src="IMG_9151.JPG" style="max-height: 500px; max-width: 500px;"/>
-    <img src="IMG_9320.JPG" style="max-height: 500px; max-width: 500px;"/ >
-    <img src="IMG_9363.JPG" style="max-height: 500px; max-width: 500px;"/ >
-    
+    <div class="item">
+      <img src="IMG_9363.JPG" style="max-height: 400px; max-width: 400px;"/ >
+      <div class="caption">View of Peak Lenin, Kyrgyzstan (2025)</div>
+    </div>
+
+    <div class="item">
+      <img src="IMG_9320.JPG" style="max-height: 400px; max-width: 400px;"/ >
+      <div class="caption">Alay Mountains, Kyrgyzstan (2025) </div>
+    </div>
+
+    <div class="item">
+      <img src="MG_9151.JPG" style="max-height: 400px; max-width: 400px;"/>
+      <div class="caption"> 5 lakes (Besh Kul) in the Alay Mountians, Kyrgyzstan (2025) </div>
+    </div>
+
+    <div class="item">
+       <img src="IMG_8600.JPG" style="max-height: 400px; max-width: 400px;"/>
+      <div class="caption">Wild horses in the mountains over Son Kul, Kyrgyzstan (2025)</div>
+    </div>
   </div>
+
 </body>
 </html>
-
