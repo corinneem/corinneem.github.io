@@ -61,13 +61,31 @@
 
     <img id="cursor-follower" src="ghosty.png">
 
-  <script>
-    const follower = document.getElementById("cursor-follower");
+ <script>
+  const follower = document.getElementById("cursor-follower");
 
-    document.addEventListener("mousemove", (e) => {
-      follower.style.left = e.clientX + "10px";
-      follower.style.top = e.clientY + "10px";
-    });
-  </script>
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  // how laggy it feels (smaller = more lag)
+  const speed = 0.08;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+
+    follower.style.left = currentX + "px";
+    follower.style.top = currentY + "px";
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
 </body>
 </html>
