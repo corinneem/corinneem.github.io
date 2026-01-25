@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name</title>
+  <meta charset="UTF-8">
+  <title>Horizontal Gallery</title>
   <style>
     body {
-      margin: 40px;
-      font-family:  "Times New Roman", Times, serif;
-      line-height: 1.5;
-      color: #111;
-      background: #fff;
-      max-width: 600px;
+      margin: 0;
+      background: #111;
     }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 1.1rem; margin-top: 2rem; }
-    a { color: #0000ee; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    .gallery {
+      height: 100vh;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 12px;
+    }
+
+    .gallery img {
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
-  <h1>here are some photos</h1>
-  <p>
-    essentially all were taken on a cannon r100 with a 18-50mm stock lens or plastic disposible camera lens. 
-  </p>
-<figure>
-    <img src="IMG_9363.JPG" alt="Peak Lenin, Kyrgyzstan, 2025" width="500" height="600">
-    <figcaption>This is a picture of a cat with cute eyes.</figcaption>
-</figure>
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="#">Project one</a></li>
-    <li><a href="#">Project two</a></li>
-    <li><a href="#">Project three</a></li>
-  </ul>
-
+  <div class="gallery">
+    <img src="IMG_8600.JPG" style="max-height: 100px; max-width: 100px;"/>
+    <img src="MG_9151.JPG" style="max-height: 100px; max-width: 100px;"/>
+    <img src="IMG_9320.JPG" style="max-height: 100px; max-width: 100px;"/ >
+    <img src="IMG_9363.JPG" style="max-height: 100px; max-width: 100px;"/ >
+  </div>
 </body>
 </html>
+
