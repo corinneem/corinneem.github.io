@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Personal Site</title>
+  <meta name="description" content="Personal website hosted on GitHub Pages." />
+  <style>
+    :root {
+      --bg: #0f172a;      /* slate-900 */
+      --fg: #e5e7eb;      /* gray-200 */
+      --muted: #94a3b8;   /* slate-400 */
+      --card: #020617;    /* slate-950 */
+      --accent: #38bdf8;  /* sky-400 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      background: linear-gradient(180deg, #020617, #020617 60%, #020617);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 920px;
+      padding: 2rem 1.25rem 4rem;
+      margin: 0 auto;
+    }
+    header {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .subtitle {
+      color: var(--muted);
+      max-width: 42rem;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 0.5rem;
+      background: #020617;
+      border: 1px solid #020617;
+    }
+    nav a:hover { border-color: var(--accent); }
+    section {
+      background: radial-gradient(1200px 200px at 0% 0%, rgba(56,189,248,0.08), transparent 60%), var(--card);
+      border: 1px solid #020617;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    footer {
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.35);
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Your Name <span class="badge">GitHub Pages</span></h1>
+      <p class="subtitle">A clean, single‑file personal website hosted for free on GitHub Pages. Edit this file and push to your repo to update.</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/your-username">GitHub</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Write a short bio here. What do you work on? What are you interested in? Keep it human.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Project One</strong> — one‑line description. <a href="#">link</a></li>
+        <li><strong>Project Two</strong> — one‑line description. <a href="#">link</a></li>
+        <li><strong>Project Three</strong> — one‑line description. <a href="#">link</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:you@example.com">you@example.com</a><br />
+        Twitter/X: <a href="https://x.com/your-handle">@your-handle</a><br />
+        LinkedIn: <a href="https://linkedin.com/in/your-name">your-name</a>
+      </p>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Your Name</span>
+      <span>Built with plain HTML · No framework · Fast ⚡</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
