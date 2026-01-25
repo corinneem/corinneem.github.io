@@ -64,18 +64,21 @@
 
     <img id="cursor-follower" src="ghosty.png">
 
- <script>
+<script>
   const follower = document.getElementById("cursor-follower");
 
   let mouseX = 0, mouseY = 0;
   let currentX = 0, currentY = 0;
 
-  // how laggy it feels (smaller = more lag)
   const speed = 0.08;
 
+  // offset so cursor is never on top of the image
+  const offsetX = 20;
+  const offsetY = 20;
+
   document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    mouseX = e.clientX + offsetX;
+    mouseY = e.clientY + offsetY;
   });
 
   function animate() {
