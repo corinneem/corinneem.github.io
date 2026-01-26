@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Corinne Mulvey's personal professional website with many allegedly fun and exciting things.">
+  <meta name="keywords" content="Corinne Mulvey, math, photos, projects">
+  <meta name="author" content="Corinne Mulvey">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>wtf seaport</title>
+  <style>
+    body {
+      font-family:  "Times New Roman", Times, serif;
+      line-height: 1.5;
+      color: #111;
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; }
+    a { color: #0000ee; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    #cursor-follower {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>how does the seaport work??????????</h1>
+  <h2>what is the seaport?</h2>
+  <p>the seaport is a neighborhood in the south east corner of boston, ma.
+    most locals (me, but also other peeople) will roll their eyes when they hear people talk about the seaport because
+    <br> 1. it's stupid expensive 
+    <br> 2. it's kinda cut off from the rest of the city via major public transit 
+    <br> 3. 20 years ago it was a bunch of empty lots along the water and an art musueum 
+    <br> 4. home to snowport, bostons premire christimas market, where you can buy a small dying christmas tree for min $87 <br>
+    in short, the seaport has the reputation of being a quasi island of wealthy transplants with boats and disposible income to spend on yoga classes for their dog or something insnane.
+  </p> 
+
+<p> 
+    in reality, the seaport was a MASSIVE (sucessful) development project from the early 2000's that turned this concrete lot      
+</p>
+  
+  <img src="seaport.webp" alt ="seaport in the 1990s">
+  <p> Seaport in the 1990s source:<a href="https://www.boston.com/news/local-news/2015/07/14/seaport-district-through-the-years/">Boston.com</a></p>
+
+<p> into this multi-use (admittedly nice and livable) neighborhood. basically they built a (luxory) neighborhood from skratch in less than 20 years.</p>
+  <img src= "" alt = "seaport development from 2017">
+  <p>the seaport masterplan from 2017. source: <a href = "https://www.sasaki.com/projects/seaport-square-master-plan/"> the planners themselves </a> </p>
+
+
+<p>in 2014 it was one of or the fastest developing areas in the country, which you can read about <a href= "https://www.nytimes.com/2007/10/07/realestate/commercial/07sqft.html"> here (NYT)</a>. 
+  billions were invested to develop it and it worked. waterfront views, housing, economic development, and touted as the greenest neighborhood of boston which is deeply ironic.  
+</p>
+
+
+<h2>this sounds like a sucessful economic devlopment project of previously unused land! </h2>
+<p> it is. </p>
+
+<h2> what's the problem ?</h2>
+<p> there is like a 50% risk that this neighborhood is gonna flood nearly completely by 2060 and by 2110, a 50% risk that it floods anually.</p>
+<h2> who on god's melting earth is insuring or investing in a development that will be under high tide within the next century?</h2>
+<p> i so desperately want to understand the economics of this. it does not matter how green they built it, the sea will not stop rising enough to flood the seaport on the regular. 
+    yes sea wall technology and flood mitigation exists, but that costs a lot. is this simply externalized to the city to cover? did anyone fully consider? w
+why is there a development that is on track to become the bottom of the boston harbor? <br> 
+  im earnestly confused and want to understand how the eocnomics of seaport isn't headed towards the current state of california fire insurance. 
+</p>
+
+
+
+    <img id="cursor-follower" src="ghosty.jpeg">
+
+<script>
+  const follower = document.getElementById("cursor-follower");
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  const speed = 0.08;
+
+  // offset so cursor is never on top of the image
+  const offsetX = 20;
+  const offsetY = 20;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX + offsetX;
+    mouseY = e.clientY + offsetY;
+  });
+
+  function animate() {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+
+    follower.style.left = currentX + "px";
+    follower.style.top = currentY + "px";
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+</body>
+</html>
