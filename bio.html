@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Corinne Mulvey's personal professional website with many allegedly fun and exciting things.">
+  <meta name="keywords" content="Corinne Mulvey, math, photos, projects">
+  <meta name="author" content="Corinne Mulvey">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corinne Mulvey</title>
+  <style>
+    body {
+      font-family:  "Times New Roman", Times, serif;
+      line-height: 1.5;
+      color: #111;
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; }
+    a { color: #0000ee; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    #cursor-follower {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <h1>a bio? kinda? </h1>
+  <p>
+    my name is corinne mulvey. i'm from massachussetts. i'm a recent grad and i studied mathematics depsite trying really hard not to. 
+    <br> 
+    when i was trying not to study math,
+    i studied physics where i did electronics stuff for a big really cold microscope, milled metal, and soldered. i like books, so i became a joint major in comparative literature during this time.
+    soldering was not my callng so, i dropped physics and became a german major. naturally, i went to germany. 
+    4 weeks after i got to germany, i became a math major again which i ended up sticking with. however, not before spending a year in germany at LMU München and interning at a education center for refugees in Halle,
+    returing to the U.S. for a few months and then spending a summer in kyrgyzstan. 
+    <br> 
+    other noteable acomplishments from this period was getting hit by a car.
+    <br> 
+    before college i was very fortunate to be able to work on gerrymandering detecting algorithms for electoral redistricitng with people who are very very smart. 
+    they also showed me that math as a career is worth doing because it can tangibly help solve very real problems. i forgot this often during my degree. 
+    <br> 
+    i do like math. specifically, graph theory, probability, and combinatorics. i probably should have studied cs. i like solving problems that have a clear application. 
+    <br> 
+    i'm equally, if not more, interested in economic development and poverty allievaiton, water, and history.
+    i also am interested in machine learning and ai. specifically because ai models are getting good predicitng things (that's what they're trained to do) 
+    i think being able to interpret how it's able to predict things might be useful for understanding what relationships affect the evolution of complex systems.  
+    maybe this understanding can help us solve or mitigate the impacts of very complex systems (like the effects of climate change on quite literally everything) and make the world less bad for more people.
+    i don't not think that this will save the world. i think the more we know, the more effecitve and effeicent our solutions to problems can be, and this is a good thing because the resource rich systems we have for solving big problems like climate, water, poverty, are largely not inadiquate for solving them. 
+    but this is okay, because the world gets better by the amalgomation of many people solving pretty specific problems.
+</p>
+<p> 
+  some other things about me. i like bikes, trees and going to new places on my bike, possibly to look at trees.<br> 
+  i have a very long duolingo streak. i don't think i should be as proud or committed to keeping it as i am. i am going to loose it one day and it will be so pointless.<br> 
+</p>
 
+    <img id="cursor-follower" src="ghosty.jpeg">
+
+<script>
+  const follower = document.getElementById("cursor-follower");
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  const speed = 0.08;
+
+  // offset so cursor is never on top of the image
+  const offsetX = 20;
+  const offsetY = 20;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX + offsetX;
+    mouseY = e.clientY + offsetY;
+  });
+
+  function animate() {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+
+    follower.style.left = currentX + "px";
+    follower.style.top = currentY + "px";
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+</body>
+</html>
